@@ -2,7 +2,7 @@
   "name": "math-problems",
   "private": true,
   "version": "0.0.0",
-  "proxy": "https://glacial-bayou-90664-100f613a8020.herokuapp.com/",
+
   "type": "module",
   "scripts": {
     "dev": "vite",

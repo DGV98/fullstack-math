@@ -16,7 +16,7 @@ def define_problem():
 
 
 @app.route("/")
-@cross_origin
+@cross_origin()
 def serve():
     return send_from_directory(app.static_folder, "index.html")
 

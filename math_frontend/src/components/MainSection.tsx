@@ -13,7 +13,7 @@ const MainSection = ({ category, difficulty }: Props) => {
   const [i, setI] = useState(0);
   // console.log(refetch);
   const { data, error, isLoading } = useQuestion(
-    "generate",
+    "api/generate",
     category,
     difficulty,
     refetch
