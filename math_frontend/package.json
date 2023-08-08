@@ -1,0 +1,38 @@
+{
+  "name": "math-problems",
+  "private": true,
+  "version": "0.0.0",
+  "proxy": "http://127.0.0.1:5000",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^2.8.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "axios": "^1.4.0",
+    "better-react-mathjax": "^2.0.2",
+    "framer-motion": "^10.12.22",
+    "katex": "^0.16.8",
+    "mathjax-full": "^3.2.2",
+    "mathjax-react": "^2.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-formula-beautifier": "^0.2.3",
+    "react-icons": "^4.10.1",
+    "react-katex": "^3.0.1",
+    "react-latex": "^2.0.0",
+    "react-latex-next": "^2.2.0",
+    "react-tex": "^1.5.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^3.1.0",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0"
+  }
+}
