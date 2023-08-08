@@ -3,7 +3,7 @@ from flask.helpers import send_from_directory
 from flask_cors import CORS, cross_origin
 from math_response import generate_prompt, get_response, clean_response
 
-app = Flask(__name__, static_folder="my-app/dist")
+app = Flask(__name__, static_folder="math_frontend/dist")
 CORS(app)
 
 
