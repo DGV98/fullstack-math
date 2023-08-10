@@ -10,6 +10,7 @@ function App() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [category, setCategory] = useState("");
   const [difficulty, setDifficulty] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <Box minHeight="90vh">
@@ -23,11 +24,15 @@ function App() {
         }}
       >
         <GridItem area="header">
-          <NavBar openMenu={onOpen} />
+          <NavBar openMenu={onOpen} isLoading={isLoading} />
         </GridItem>
         <GridItem area="main" marginBottom={3}>
           {difficulty ? (
-            <MainSection category={category} difficulty={difficulty} />
+            <MainSection
+              category={category}
+              difficulty={difficulty}
+              disableButton={setIsLoading}
+            />
           ) : (
             <WelcomeCard />
           )}

@@ -6,9 +6,10 @@ import { useState } from "react";
 interface Props {
   category: string;
   difficulty: string;
+  disableButton: (loading: boolean) => void;
 }
 
-const MainSection = ({ category, difficulty }: Props) => {
+const MainSection = ({ category, difficulty, disableButton }: Props) => {
   const [refetch, setRefetch] = useState(true);
   const [i, setI] = useState(0);
   // console.log(refetch);
@@ -18,6 +19,7 @@ const MainSection = ({ category, difficulty }: Props) => {
     difficulty,
     refetch
   );
+  disableButton(isLoading);
   if (error) return <h1>{error}</h1>;
   if (!data) return <h1>Oops! Something went wrong!</h1>;
 
@@ -40,8 +42,8 @@ const MainSection = ({ category, difficulty }: Props) => {
         colorScheme="green"
         marginTop={8}
         size="lg"
+        isDisabled={isLoading}
         onClick={() => {
-          if (isLoading) return;
           if (i === 8) {
             setRefetch(!refetch);
             setI(0);

@@ -1,11 +1,20 @@
-import { HStack, LinkBox, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Center,
+  HStack,
+  IconButton,
+  LinkBox,
+  Text,
+} from "@chakra-ui/react";
 import { BiMath, BiMenu } from "react-icons/bi";
 
 interface Props {
   openMenu: () => void;
+  isLoading: boolean;
 }
 
-const NavBar = ({ openMenu }: Props) => {
+const NavBar = ({ openMenu, isLoading }: Props) => {
   return (
     <HStack marginBottom={5} justifyContent="space-between">
       <HStack>
@@ -14,9 +23,13 @@ const NavBar = ({ openMenu }: Props) => {
           Math Problem Generator
         </Text>
       </HStack>
-      <LinkBox paddingTop={2} onClick={() => openMenu()}>
-        <BiMenu size={40} />
-      </LinkBox>
+      <IconButton
+        aria-label="Open Menu"
+        isDisabled={isLoading}
+        variant="link"
+        onClick={() => openMenu()}
+        icon={<BiMenu size={40} />}
+      />
     </HStack>
   );
 };
