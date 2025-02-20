@@ -1,12 +1,12 @@
-import openai
+from openai import OpenAI
 import re
 import os
 
-# openai.api_key = os.getenv("OPENAI_API_KEY")
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
 def get_response(prompt) -> str:
-    response = openai.ChatCompletion.create(
+    response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
             {
@@ -29,7 +29,7 @@ def get_response(prompt) -> str:
         frequency_penalty=0,
         presence_penalty=0,
     )
-    return response["choices"][0]["message"]["content"]
+    return response.choices[0].message.content
 
 
 def clean_response(response: str):
