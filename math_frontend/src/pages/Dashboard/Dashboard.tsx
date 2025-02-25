@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./App.css";
 import { Box, Grid, GridItem, useDisclosure } from '@chakra-ui/react'
 import NavBar from "./components/NavBar";
 import SideDrawer from "./components/SideDrawer";
