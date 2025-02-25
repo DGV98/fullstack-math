@@ -1,5 +1,5 @@
 import axios from "axios";
 
-export default axios.create({
-  baseURL: "https://fullstack-math.vercel.app/",
+const axiosInstance = axios.create({
+  baseURL: "http://localhost:5000",
 });
