@@ -8,6 +8,7 @@ flask = "*"
 openai = "*"
 flask-cors = "*"
 flask-session = "*"
+supabase = "*"
 
 [dev-packages]
 
