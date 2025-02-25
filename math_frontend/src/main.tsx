@@ -1,18 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
-import "./index.css";
-import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
-import theme from "./themeConfig";
 import { MathJaxContext } from "better-react-mathjax";
+import { RouterProvider } from "react-router";
+import router from "./routing/routes";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ThemeProvider } from "@mui/material";
+import theme from "../theme";
+
+const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <ChakraProvider theme={theme}>
-      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-      <MathJaxContext>
-        <App />
-      </MathJaxContext>
-    </ChakraProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={theme}>
+        <MathJaxContext>
+          <RouterProvider router={router} />
+        </MathJaxContext>
+      </ThemeProvider>
+    </QueryClientProvider>
   </React.StrictMode>
 );
